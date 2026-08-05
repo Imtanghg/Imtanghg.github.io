@@ -20,27 +20,27 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"Default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"top_n_per_article":-1,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="题意 给定一个有向图，玩家 A，B 分别控制一些点。有一些点是特殊点。对于每一个点作为开始位置，A，B 一开始选择将每一个自己的点只保留一条出边，保证形成一条环。A 先手，求是否使得包含一个特殊点。 n≤5000,m≤20000n\le 5000 , m\le 20000n≤5000,m≤20000  思路 首先我们发现，对于一开始作为开始位置可以等价于转化成每次走到一个点选择一条边去走，因为最">
+    <meta name="description" content="题意 通信题，无向图，一开始给边权定一个 {0,1}\{ 0,1 \}{0,1} 的权，要从 sss 走到 ttt，但每次只能看到边的信息，没有记忆。要求步数小于最短距离 +14+14+14。定边的时候只知道 ttt。  思路 注意到这个 141414 是一个大于 log⁡n\log nlogn 的数，这也就提示我们应该至多多 log⁡\loglog 次。然后我们赋值其实相当于给这个边顶一个向，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="P3838 [IOI 2017] Toy Train">
-<meta property="og:url" content="http://example.com/2026/05/01/P3838%20%5BIOI%202017%5D%20Toy%20Train/index.html">
+<meta property="og:title" content="P13695 [CEOI 2025] theseus">
+<meta property="og:url" content="http://example.com/2026/08/05/P13695-CEOI-2025-theseus/index.html">
 <meta property="og:site_name" content="tanghg の 算法笔记">
-<meta property="og:description" content="题意 给定一个有向图，玩家 A，B 分别控制一些点。有一些点是特殊点。对于每一个点作为开始位置，A，B 一开始选择将每一个自己的点只保留一条出边，保证形成一条环。A 先手，求是否使得包含一个特殊点。 n≤5000,m≤20000n\le 5000 , m\le 20000n≤5000,m≤20000  思路 首先我们发现，对于一开始作为开始位置可以等价于转化成每次走到一个点选择一条边去走，因为最">
+<meta property="og:description" content="题意 通信题，无向图，一开始给边权定一个 {0,1}\{ 0,1 \}{0,1} 的权，要从 sss 走到 ttt，但每次只能看到边的信息，没有记忆。要求步数小于最短距离 +14+14+14。定边的时候只知道 ttt。  思路 注意到这个 141414 是一个大于 log⁡n\log nlogn 的数，这也就提示我们应该至多多 log⁡\loglog 次。然后我们赋值其实相当于给这个边顶一个向，">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2026-05-01T12:20:20.000Z">
-<meta property="article:modified_time" content="2026-06-05T11:50:17.882Z">
+<meta property="article:published_time" content="2026-08-05T03:53:14.000Z">
+<meta property="article:modified_time" content="2026-08-05T03:58:15.947Z">
 <meta property="article:author" content="tanghg">
 <meta property="article:tag" content="思维">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/2026/05/01/P3838%20%5BIOI%202017%5D%20Toy%20Train/">
+<link rel="canonical" href="http://example.com/2026/08/05/P13695-CEOI-2025-theseus/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2026/05/01/P3838%20%5BIOI%202017%5D%20Toy%20Train/","path":"2026/05/01/P3838 [IOI 2017] Toy Train/","title":"P3838 [IOI 2017] Toy Train"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2026/08/05/P13695-CEOI-2025-theseus/","path":"2026/08/05/P13695-CEOI-2025-theseus/","title":"P13695 [CEOI 2025] theseus"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>P3838 [IOI 2017] Toy Train | tanghg の 算法笔记</title>
+<title>P13695 [CEOI 2025] theseus | tanghg の 算法笔记</title>
   
 
 
@@ -223,7 +223,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2026/05/01/P3838%20%5BIOI%202017%5D%20Toy%20Train/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2026/08/05/P13695-CEOI-2025-theseus/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/head.jpg">
@@ -236,12 +236,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="P3838 [IOI 2017] Toy Train | tanghg の 算法笔记">
+      <meta itemprop="name" content="P13695 [CEOI 2025] theseus | tanghg の 算法笔记">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          P3838 [IOI 2017] Toy Train
+          P13695 [CEOI 2025] theseus
         </h1>
 
         <div class="post-meta-container">
@@ -251,15 +251,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2026-05-01 20:20:20" itemprop="dateCreated datePublished" datetime="2026-05-01T20:20:20+08:00">2026-05-01</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2026-06-05 19:50:17" itemprop="dateModified" datetime="2026-06-05T19:50:17+08:00">2026-06-05</time>
+      <time title="创建时间：2026-08-05 11:53:14 / 修改时间：11:58:15" itemprop="dateCreated datePublished" datetime="2026-08-05T11:53:14+08:00">2026-08-05</time>
     </span>
 
   
@@ -276,7 +270,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>527</span>
+      <span>427</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -294,13 +288,12 @@
     
     
     <div class="post-body" itemprop="articleBody"><h1 id="题意"><a class="markdownIt-Anchor" href="#题意"></a> 题意</h1>
-<p>给定一个有向图，玩家 A，B 分别控制一些点。有一些点是特殊点。对于每一个点作为开始位置，A，B 一开始选择将每一个自己的点只保留一条出边，保证形成一条环。A 先手，求是否使得包含一个特殊点。</p>
-<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>≤</mo><mn>5000</mn><mo separator="true">,</mo><mi>m</mi><mo>≤</mo><mn>20000</mn></mrow><annotation encoding="application/x-tex">n\le 5000 , m\le 20000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">5</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">m</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span></span></span></span></p>
+<p>通信题，无向图，一开始给边权定一个 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">{</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo stretchy="false">}</mo></mrow><annotation encoding="application/x-tex">\{ 0,1 \}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">{</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">1</span><span class="mclose">}</span></span></span></span> 的权，要从 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">s</span></span></span></span> 走到 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61508em;vertical-align:0em;"></span><span class="mord mathnormal">t</span></span></span></span>，但每次只能看到边的信息，没有记忆。要求步数小于最短距离 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>+</mo><mn>14</mn></mrow><annotation encoding="application/x-tex">+14</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">+</span><span class="mord">1</span><span class="mord">4</span></span></span></span>。定边的时候只知道 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61508em;vertical-align:0em;"></span><span class="mord mathnormal">t</span></span></span></span>。</p>
 <h1 id="思路"><a class="markdownIt-Anchor" href="#思路"></a> 思路</h1>
-<p>首先我们发现，对于一开始作为开始位置可以等价于转化成每次走到一个点选择一条边去走，因为最优情况下这不会改变什么。之后发现，环的长度最大就是 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span></span></span></span>，所以等价于我们只需要去找是否能够经过特殊点无数次。<br />
-对于只有一个特殊点的情况，我们考虑有向图博弈求出其他的点先手能否到达这个特殊点的状态 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">s</span></span></span></span>。那么对于这个特殊点的归属，如果属于先手控制那么只需要满足存在相邻位置先手能到即可无数次，因为这样就可以形成一个环，即为状态 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">s</span></span></span></span>。那么对于后手控制的情况，只要不存在有相邻位置先手到不了，那么就是前面的 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">s</span></span></span></span>，否则全 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>。</p>
-<p>现在思考扩展到多个点。我们发现因为要经过无数个特殊点，那么需要保证一个特殊点每次都可以到达另一个（可以为自己）的特殊点，只要这样就可以走无数次了。所以我们迭代 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span></span></span></span> 次每次删去不能动的特殊点即可。那么 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">s</span></span></span></span> 就是最终答案。</p>
-<p>时间复杂度 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mi>m</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(nm)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mord mathnormal">m</span><span class="mclose">)</span></span></span></span>。</p>
+<p>注意到这个 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>14</mn></mrow><annotation encoding="application/x-tex">14</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">4</span></span></span></span> 是一个大于 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>log</mi><mo>⁡</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">\log n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">n</span></span></span></span> 的数，这也就提示我们应该至多多 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>log</mi><mo>⁡</mo></mrow><annotation encoding="application/x-tex">\log</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span></span></span></span> 次。然后我们赋值其实相当于给这个边顶一个向，把图转成有向图。</p>
+<p>那么我们可以从 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.61508em;vertical-align:0em;"></span><span class="mord mathnormal">t</span></span></span></span> 开始做一个 bfs 分层。然后我们考虑如果能走向层更小的就直接连边。现在的问题是我们怎么考虑层之间的连边。</p>
+<p>考虑这个 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>log</mi><mo>⁡</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">\log n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">n</span></span></span></span>，类似一个合并操作。那么我们启发式合并直接从小的连向大的。这样我们向旁边每一次都会扩张很多的点，至多扩张 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span></span></span></span> 次，所以是 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>log</mi><mo>⁡</mo></mrow><annotation encoding="application/x-tex">\log</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span></span></span></span> 的。</p>
+<p>但是现在的问题是可能有很多个连出去的边，我们不知道走哪条。于是我们可以直接在一开始就把所有的点和边从大到小去考虑，这样最终我们只需要走一个能走且编号最大的点就一定可以满足条件。</p>
 
     </div>
 
@@ -331,14 +324,11 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2026/05/01/%E6%A2%A6%E7%86%8A2026%E7%9C%81%E9%80%89%E9%9B%86%E8%AE%AD%20Day5%20T1/" rel="prev" title="梦熊2026省选集训 Day5 T1">
-                  <i class="fa fa-angle-left"></i> 梦熊2026省选集训 Day5 T1
+                <a href="/2026/08/04/P5811-IOI-2019-%E6%99%AF%E7%82%B9%E5%88%92%E5%88%86/" rel="prev" title="P5811 [IOI 2019] 景点划分">
+                  <i class="fa fa-angle-left"></i> P5811 [IOI 2019] 景点划分
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2026/05/01/P10846%20%5BEGOI%202024%5D%20Team%20Coding/" rel="next" title="P10846 [EGOI 2024] Team Coding &#x2F; 团队编程">
-                  P10846 [EGOI 2024] Team Coding / 团队编程 <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>
